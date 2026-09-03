@@ -45,6 +45,37 @@ async function loadTickets() {
    
 
 internetTickets = allTickets;
+internetTickets.sort((a,b)=>{
+
+    const abiertos = [
+        'nuevo',
+        'en espera',
+        'en curso',
+        'asignado'
+    ];
+
+    const aActivo =
+        abiertos.some(x =>
+            String(a.state||'')
+                .toLowerCase()
+                .includes(x)
+        );
+
+    const bActivo =
+        abiertos.some(x =>
+            String(b.state||'')
+                .toLowerCase()
+                .includes(x)
+        );
+
+    if(aActivo && !bActivo) return -1;
+    if(!aActivo && bActivo) return 1;
+
+    return new Date(b.sys_created_on)
+        - new Date(a.sys_created_on);
+
+});
+
 renderKpis();
 render(internetTickets);
     }
