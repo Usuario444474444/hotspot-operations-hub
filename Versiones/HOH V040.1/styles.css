@@ -1,0 +1,360 @@
+:root {
+    --p: #4F46FF;
+    --ok: #16a34a;
+    --warn: #f59e0b;
+    --bad: #dc2626;
+    --bg: #f4f6fb;
+    --surface: #ffffff;
+    --border: #e7ebf3;
+    --muted: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    font-family: Segoe UI, sans-serif;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: white;
+    padding: 16px;
+    border-right: 1px solid var(--border);
+}
+
+.main {
+    flex: 1;
+    padding: 16px;
+}
+
+.topbar input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    outline: none;
+}
+
+.kpis {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.kpi {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    min-width: 140px;
+    border: 1px solid var(--border);
+}
+
+.kpi b {
+    font-size: 28px;
+    color: var(--p);
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tab {
+    border: none;
+    background: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.active-tab {
+    background: var(--p);
+    color: white;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 280px 1fr 340px;
+    gap: 18px;
+    height: calc(100vh - 180px);
+}
+
+/* ==========================================
+   COLUMNA IZQUIERDA
+========================================== */
+
+.feed {
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.ticket {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.ticket:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+.ticket.active {
+    border: 2px solid var(--p);
+    background: #eef2ff;
+}
+
+.feed .ticket b {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.feed .ticket small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ==========================================
+   CENTRO
+========================================== */
+
+.detail-center {
+    overflow-y: auto;
+}
+
+.card-panel {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    min-height: 100%;
+}
+
+#detailContent h2 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 800;
+}
+
+#detailContent h3 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.ticket-header {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.ticket-number {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.ticket-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.ticket-status {
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #fee2e2;
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* ==========================================
+   PANEL DERECHO
+========================================== */
+
+.info-panel {
+    overflow-y: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.info-panel h3 {
+    margin-top: 0;
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.wait {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.res {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.course {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ==========================================
+   STRIKE
+========================================== */
+
+.strike0 {
+    color: #16a34a;
+}
+
+.strike1 {
+    color: #eab308;
+}
+
+.strike2 {
+    color: #f97316;
+}
+
+.strike3 {
+    color: #dc2626;
+}
+
+/* ==========================================
+   SAP CENTER
+========================================== */
+
+.sap-center {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+    margin: 14px 0;
+}
+
+.sap-center h3 {
+    margin-top: 0;
+    color: var(--p);
+}
+
+.sap-center div {
+    margin: 6px 0;
+}
+
+/* ==========================================
+   DUPLICADOS
+========================================== */
+
+.dup-row,
+.history-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.dup-row {
+    background: #fff7ed;
+}
+
+.history-row {
+    background: #f8fafc;
+}
+
+.empty-dup {
+    color: var(--muted);
+    padding: 10px 0;
+}
+
+/* ==========================================
+   HISTÓRICO
+========================================== */
+
+.history-summary {
+    margin-bottom: 10px;
+}
+
+.history-toggle {
+    color: var(--p);
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.history-toggle:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   ACTIVIDAD
+========================================== */
+
+.activity-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eef2f7;
+    font-size: 13px;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   BOTONES PEQUEÑOS
+========================================== */
+
+.mini-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 12px;
+    padding: 0 4px;
+    margin-left: 4px;
+}
+
+.mini-btn:hover {
+    color: var(--p);
+}
+
+.action-btn {
+    border: none;
+    background: #eef2ff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
