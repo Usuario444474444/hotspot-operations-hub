@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HOH V040</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar-v040">
+
+        <div>
+
+            <div class="sidebar-brand">
+
+                <div class="brand-title">
+                    Control Hotspot
+                </div>
+
+                <div class="brand-subtitle">
+                    Operations Hub
+                </div>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+    <button class="sidebar-link active">
+        Tickets
+    </button>
+
+    <button class="sidebar-link">
+        Control de Folios
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Sucursales
+    </button>
+
+    <button class="sidebar-link">
+        Hotspots
+    </button>
+
+    <button class="sidebar-link">
+        SIMs
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Incidentes
+    </button>
+
+    <button class="sidebar-link">
+        Reportes
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Configuración
+    </button>
+
+</nav>
+
+        </div>
+
+        <button
+    id="collapseBtn"
+    class="sidebar-collapse"
+    onclick="toggleSidebar()">
+
+    ← Colapsar
+
+</button>
+
+    </aside>
+
+    <main class="main">
+
+        
+
+        
+
+     <div id="kpis" class="kpis"></div>  
+
+        <div class="workspace">
+
+    <section id="feed" class="feed">
+
+    <div class="tickets-header">
+
+        <h2>Tickets</h2>
+
+        <div class="tickets-search">
+
+            <input
+                id="searchBox"
+                placeholder="Buscar tickets..."
+                onkeyup="applyFilters()">
+
+            <button
+    class="filter-btn"
+    onclick="toggleAdvancedFilters()">
+    ☰
+</button>
+
+        </div>
+
+        <div class="tickets-filters">
+
+    <button
+    id="btnTodos"
+    class="filter-pill active"
+    onclick="
+        filtroTickets='todos';
+        render(currentList);
+    ">
+    Todos
+</button>
+
+<button
+    id="btnActivos"
+    class="filter-pill"
+    onclick="
+        filtroTickets='activos';
+        render(currentList);
+    ">
+    Activos
+</button>
+
+<button
+    id="btnResueltos"
+    class="filter-pill"
+    onclick="
+        filtroTickets='resueltos';
+        render(currentList);
+    ">
+    Resueltos
+</button>
+
+</div>
+<div
+    id="advancedFilters"
+    class="advanced-filters"
+    style="display:none;">
+
+    <h4>Filtros avanzados</h4>
+    <button
+    class="clear-filter-btn"
+    onclick="clearAdvancedFilters()">
+
+    Limpiar filtros
+
+</button>
+
+   <div class="filter-group">
+
+    <span class="filter-title">
+        Estado
+    </span>
+
+    <div class="filter-chips">
+
+        <button
+            class="chip"
+            data-filter="nuevo"
+            onclick="this.classList.toggle('chip-active')">
+            Nuevo
+        </button>
+
+        <button
+            class="chip"
+            data-filter="espera"
+            onclick="this.classList.toggle('chip-active')">
+            En espera
+        </button>
+
+        <button
+            class="chip"
+            data-filter="curso"
+            onclick="this.classList.toggle('chip-active')">
+            En curso
+        </button>
+
+        <button
+            class="chip"
+            data-filter="resuelto"
+            onclick="this.classList.toggle('chip-active')">
+            Resuelto
+        </button>
+
+        <button
+            class="chip"
+            data-filter="cerrado"
+            onclick="this.classList.toggle('chip-active')">
+            Cerrado
+        </button>
+
+    </div>
+
+</div>
+<div class="filter-group">
+
+    <span class="filter-title">
+        Responsable
+    </span>
+
+    <div id="responsablesFilters"
+         class="filter-chips">
+
+    </div>
+
+</div>
+<div class="filter-group">
+
+    <span class="filter-title">
+        Strike
+    </span>
+
+    <div class="filter-chips">
+
+        <button
+            class="chip"
+            data-strike="0"
+            onclick="this.classList.toggle('chip-active')">
+            Strike 0
+        </button>
+
+        <button
+            class="chip"
+            data-strike="1"
+            onclick="this.classList.toggle('chip-active')">
+            Strike 1
+        </button>
+
+        <button
+            class="chip"
+            data-strike="2"
+            onclick="this.classList.toggle('chip-active')">
+            Strike 2
+        </button>
+
+    </div>
+
+</div>
+
+    <button
+        class="apply-filter-btn"
+        onclick="applyAdvancedFilters()">
+
+        Aplicar
+
+    </button>
+
+</div>
+
+    </div>
+
+    <div id="ticketsContainer"></div>
+
+</section>
+
+    <section class="detail-center">
+
+        <div
+            id="detailContent"
+            class="card-panel">
+
+            Seleccione un ticket
+
+        </div>
+
+    </section>
+
+    <aside
+        id="infoPanel"
+        class="info-panel">
+
+        <h3>Información</h3>
+
+        <p>
+            Seleccione un ticket
+        </p>
+
+    </aside>
+
+</div>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
