@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HOH V040</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar-v040">
+
+        <div>
+
+            <div class="sidebar-brand">
+
+                <div class="brand-title">
+                    Control Hotspot
+                </div>
+
+                <div class="brand-subtitle">
+                    Operations Hub
+                </div>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+    <button class="sidebar-link active">
+        Tickets
+    </button>
+
+    <button class="sidebar-link">
+        Control de Folios
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Sucursales
+    </button>
+
+    <button class="sidebar-link">
+        Hotspots
+    </button>
+
+    <button class="sidebar-link">
+        SIMs
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Incidentes
+    </button>
+
+    <button class="sidebar-link">
+        Reportes
+    </button>
+
+    <div class="menu-divider"></div>
+
+    <button class="sidebar-link">
+        Configuración
+    </button>
+
+</nav>
+
+        </div>
+
+        <button
+    id="collapseBtn"
+    class="sidebar-collapse"
+    onclick="toggleSidebar()">
+
+    ← Colapsar
+
+</button>
+
+    </aside>
+
+    <main class="main">
+
+        
+
+        
+
+     <div id="kpis" class="kpis"></div>  
+
+        <div class="workspace">
+
+    <section id="feed" class="feed">
+
+    <div class="tickets-header">
+
+        <h2>Tickets</h2>
+
+        <div class="tickets-search">
+
+            <input
+                id="searchBox"
+                placeholder="Buscar tickets..."
+                onkeyup="applyFilters()">
+
+            <button class="filter-btn">
+                ☰
+            </button>
+
+        </div>
+
+        <div class="tickets-filters">
+
+            <button class="filter-pill active">
+                Todos
+            </button>
+
+            <button class="filter-pill">
+                Activos
+            </button>
+
+            <button class="filter-pill">
+                Resueltos
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="ticketsContainer"></div>
+
+</section>
+
+    <section class="detail-center">
+
+        <div
+            id="detailContent"
+            class="card-panel">
+
+            Seleccione un ticket
+
+        </div>
+
+    </section>
+
+    <aside
+        id="infoPanel"
+        class="info-panel">
+
+        <h3>Información</h3>
+
+        <p>
+            Seleccione un ticket
+        </p>
+
+    </aside>
+
+</div>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
