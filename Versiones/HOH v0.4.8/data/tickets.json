@@ -1,0 +1,11 @@
+[
+  {
+    "ticketId": 1785451825497,
+    "tienda": "SPGG001",
+    "contacto": "Brian",
+    "telefono": "8112345678",
+    "problema": "SIN_SESION",
+    "descripcion": "Prueba V5",
+    "estado": "ABIERTO"
+  }
+]
