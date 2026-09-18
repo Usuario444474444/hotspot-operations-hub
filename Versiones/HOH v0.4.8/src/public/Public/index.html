@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HOH V035</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside id="sidebar" class="sidebar"><button class="collapse">☰</button>
+            <h2>Control Hotspot</h2>
+        </aside>
+        <main class="main">
+            <header class="topbar"><input id="searchBox" placeholder="🔍 Buscar SAP, ticket o sucursal" onkeyup="applyFilters()"></header>
+            <div id="kpis" class="kpis"></div>
+            <div class="workspace">
+                <section id="feed" class="feed"></section>
+                <aside class="detail">
+                    <div id="detailContent">Seleccione un ticket</div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

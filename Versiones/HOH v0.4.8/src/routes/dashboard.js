@@ -1,0 +1,1 @@
+const express=require('express');const r=express.Router();const fs=require('fs');r.get('/api/dashboard',(q,s)=>{const t=JSON.parse(fs.readFileSync('./data/tickets.json','utf8'));const d=JSON.parse(fs.readFileSync('./data/tiendas.json','utf8'));s.json({tickets:t.length,tiendas:d.length});});module.exports=r;
